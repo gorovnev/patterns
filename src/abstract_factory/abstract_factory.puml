@@ -1,0 +1,54 @@
+@startuml
+
+class Tab1 {
+  Widget getTitle(BuildContext context);
+  Widget getMainWidget(BuildContext context);
+}
+
+class Tab2 {
+  Widget getTitle(BuildContext context);
+  Widget getMainWidget(BuildContext context);
+}
+
+class AbstractFactory {
+  Tab1 createTab1();
+  Tab2 createTab2();
+}
+
+class TextTab1 implements Tab1 {
+  Widget getMainWidget(BuildContext context);
+
+  Widget getTitle(BuildContext context);
+}
+
+class TextTab2 implements Tab2 {
+  Widget getMainWidget(BuildContext context);
+
+  Widget getTitle(BuildContext context);
+}
+
+class IconTab1 implements Tab1 {
+  Widget getMainWidget(BuildContext context);
+
+  Widget getTitle(BuildContext context);
+}
+
+class IconTab2 implements Tab2 {
+  Widget getMainWidget(BuildContext context);
+
+  Widget getTitle(BuildContext context);
+}
+
+class TextTabFactory implements AbstractFactory {
+  Tab1 createTab1();
+
+  Tab2 createTab2();
+}
+
+class IconTabFactory implements AbstractFactory {
+  Tab1 createTab1();
+
+  Tab2 createTab2();
+}
+
+@enduml
