@@ -1,0 +1,48 @@
+@startuml Builder
+
+class AbstractTab {
+  Widget getTitle(BuildContext context);
+  Widget getMainWidget(BuildContext context);
+}
+
+class TextTab1 {
+}
+
+class TextTab2 {
+}
+
+class IconTab1 {
+}
+
+class IconTab2 {
+}
+
+class TabBuider {
+  AbstractTab getTab1();
+  AbstractTab getTab2();
+}
+
+class TextTabBuilder {
+}
+
+class IconTabBuilder {
+}
+
+class _MyHomePageState {
+    Widget Build(BuildContext);
+}
+
+AbstractTab <|-- TextTab1
+AbstractTab <|-- TextTab2
+AbstractTab <|-- IconTab1
+AbstractTab <|-- IconTab2
+
+TabBuider <|-- TextTabBuilder
+TabBuider <|-- IconTabBuilder
+
+TextTabBuilder --> AbstractTab
+IconTabBuilder --> AbstractTab
+
+_MyHomePageState o-- TabBuider
+
+@enduml
