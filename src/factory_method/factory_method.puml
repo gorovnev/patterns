@@ -1,0 +1,31 @@
+@startuml Factory Method
+
+abstract class AbstractContent {
+  Widget getContent()
+}
+
+class ListViewContent {}
+
+class GridViewContent {}
+
+abstract class AbstractCreator {
+  AbstractContent createContent()
+}
+
+class ListCreator {}
+class GridCreator {}
+
+class _MyHomePageState {}
+
+AbstractContent <|-- ListViewContent
+AbstractContent <|-- GridViewContent
+
+AbstractCreator <|-- ListCreator
+AbstractCreator <|-- GridCreator
+
+ListViewContent <-- ListCreator
+GridViewContent <-- GridCreator
+
+_MyHomePageState <-- AbstractCreator
+
+@enduml
