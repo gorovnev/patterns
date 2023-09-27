@@ -1,0 +1,22 @@
+@startuml Prototype implementation
+
+abstract class Prototype {
+  Prototype clone()
+}
+
+class NumberContent {
+  int _number
+}
+
+class StringContent {
+  String _content
+}
+
+class _MyHomePageState {}
+
+Prototype <|-- NumberContent
+Prototype <|-- StringContent
+
+_MyHomePageState <-- Prototype
+
+@enduml
